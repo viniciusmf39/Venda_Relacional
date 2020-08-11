@@ -1,4 +1,4 @@
-import Brand from '../models/brand';
+import Brand from '../models/Brand';
 
 class BrandController {
   async index(req, res) {

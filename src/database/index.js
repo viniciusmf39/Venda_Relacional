@@ -2,8 +2,8 @@ import Sequelize from 'sequelize';
 import 'dotenv/config';
 import databaseConfig from '../config/database';
 
-import Brands from '../app/models/brand';
-import Product from '../app/models/product';
+import Brands from '../app/models/Brand';
+import Product from '../app/models/Product';
 
 const models = [Brands, Product];
 

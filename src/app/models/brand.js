@@ -1,23 +1,26 @@
-import Sequelize , {Model} from 'sequelize' ;
+import Sequelize, { Model } from 'sequelize';
 
-class Product extends Model {
-  static init (sequelize){
-    super.init({
-      uid:{
-        allowNull:false ,
-        primaryKey : true ,
-        type : Sequelize.UUID,
-        defaultValue:Sequelize.UUIDV4,
+class Brand extends Model {
+  static init(sequelize) {
+    super.init(
+      {
+        uid: {
+          allowNull: false,
+          primaryKey: true,
+          type: Sequelize.UUID,
+          defaultValue: Sequelize.UUIDV4,
+        },
+        name: {
+          allowNull: false,
+          type: Sequelize.STRING,
+        },
       },
-      name:{
-        allowNull:false ,
-        type: Sequelize.STRING,
-      },
-    },{
-      sequelize
-    });
+      {
+        sequelize,
+      }
+    );
     return this;
   }
 }
 
-export default Product
+export default Brand;
