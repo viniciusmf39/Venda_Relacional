@@ -36,6 +36,13 @@ class Product extends Model {
     );
     return this;
   }
+
+  static associate(models) {
+    this.belongsTo(models.Brands, {
+      as: 'brand',
+      foreignKey: 'brand_uid',
+    });
+  }
 }
 
 export default Product;

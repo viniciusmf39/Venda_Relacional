@@ -16,7 +16,11 @@ class DataBase {
     console.log('iniciou o banco');
     this.connection = new Sequelize(process.env.DATABASE_URL, databaseConfig);
 
-    models.map((model) => model.init(this.connection));
+    models
+      .map((model) => model.init(this.connection))
+      .map(
+        (model) => model.associate && model.associate(this.connection.models)
+      );
   }
 }
 
